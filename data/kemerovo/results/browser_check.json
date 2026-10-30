@@ -15,5 +15,13 @@
   },
   "demandLinkRows": 55,
   "filteredRows": 1295,
-  "javascriptExceptions": []
+  "javascriptExceptions": [],
+  "checked_utc": "2026-10-30T09:10:46.328870+00:00",
+  "html_bytes": 12002694,
+  "below_20_MB": true,
+  "payload_encoding": "gzip+base64",
+  "matrix_shape": [
+    2230,
+    2230
+  ]
 }

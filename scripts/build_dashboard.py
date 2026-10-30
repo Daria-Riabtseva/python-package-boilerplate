@@ -3,6 +3,8 @@ from pathlib import Path
 import argparse
 import json
 import math
+import gzip
+import base64
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,12 +46,17 @@ def build(source: Path, output: Path):
                    'matrix': matrix.astype('float64').round(2).to_numpy().tolist(), 'ids': ids,
                    'links': links, 'clusters': clusters.to_dict('records')})
     payload = json.dumps(data, ensure_ascii=False, allow_nan=False, separators=(',', ':'))
-    payload = payload.replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    # Lossless compression preserves every metric, geometry and matrix entry.
+    compressed = gzip.compress(payload.encode('utf-8'), compresslevel=9, mtime=0)
+    assert gzip.decompress(compressed).decode('utf-8') == payload
+    payload = base64.b64encode(compressed).decode('ascii')
     vendor = ROOT / 'scripts/vendor/leaflet'
     page = TEMPLATE.replace('__PAYLOAD__', payload)
     page = page.replace('__LEAFLET_CSS__', (vendor / 'leaflet.css').read_text(encoding='utf-8'))
     page = page.replace('__LEAFLET_JS__', (vendor / 'leaflet.js').read_text(encoding='utf-8').replace('</script', '<\\/script'))
     page = page.replace('__LEAFLET_LICENSE__', (vendor / 'LICENSE').read_text(encoding='utf-8'))
+    if len(page.encode('utf-8')) > 20_000_000:
+        raise ValueError('HTML превышает лимит 20 МБ; предыдущий файл не изменён')
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(page, encoding='utf-8')
     print(f'Создан {output}: {len(ids)} кварталов, {len(manifest)} показателей, {output.stat().st_size:,} байт')
@@ -106,10 +113,14 @@ button{cursor:pointer;padding:9px 15px;background:var(--accent);color:#fff;borde
 <section class="panel"><h2>Методика, единицы и ограничения</h2><div id="method"></div><details><summary>Полный перечень показателей</summary><div class="scroll" id="manifest"></div></details></section>
 <footer>Данные: © OpenStreetMap contributors, ODbL. Расчёты: BlocksNet. Геоданные встроены в этот HTML;
 Leaflet встроен; интернет нужен только для подложки OSM. HTML не запускает геоаналитические расчёты.</footer></main>
-<script id="study" type="application/json">__PAYLOAD__</script>
+<script id="study" type="application/gzip+base64">__PAYLOAD__</script>
 <script>__LEAFLET_JS__</script><script>
 'use strict';
-const D=JSON.parse(document.getElementById('study').textContent),rows=D.geo.features.map(f=>f.properties);
+(async () => {
+if (!('DecompressionStream' in window)) throw new Error('Для открытия отчёта используйте современный Edge, Chrome или Firefox.');
+const bytes=Uint8Array.from(atob(document.getElementById('study').textContent.trim()),c=>c.charCodeAt(0));
+const unpacked=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+const D=JSON.parse(await new Response(unpacked).text()),rows=D.geo.features.map(f=>f.properties);
 const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=x=>x===null||x===undefined?'Нет данных':typeof x==='number'?x.toLocaleString('ru-RU',{maximumFractionDigits:3}):String(x);
 const sum=k=>rows.reduce((s,r)=>s+(Number.isFinite(r[k])?r[k]:0),0);
@@ -159,6 +170,11 @@ let accessible=rows.filter(r=>Number.isFinite(r.area_accessibility)).sort((a,b)=
 $('findings').innerHTML='<ul>'+observations.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ul><p class="muted">Выводы относятся к выбранным исходным данным и допущениям модели.</p>';
 $('method').innerHTML='<p><strong>Источник графа:</strong> '+esc(D.meta.graph_source)+'</p><p>Спрос на школы: '+esc(D.meta.normative_school_demand_per_1000)+' мест на 1000 жителей; доступность: '+esc(D.meta.normative_school_accessibility_min)+' минут. Норматив взят из конфигурации BlocksNet, не проверен как действующая местная норма.</p><p>Сильная обеспеченность учитывает удовлетворённый спрос в нормативном времени, слабая — также за его пределами. Глубина 1, как в примере: показатели могут совпадать. При нулевом спросе доля не определена.</p><p>Контрольная численность города: '+esc(fmt(D.meta.population_calibration.target_total))+' человек по сообщению пользователя (год статистики не указан). По кварталам она распределена пропорционально исходной оценке методом наибольших остатков, с точным сохранением общей суммы. Исходные веса: жилая площадь / 30 м² на человека; доля жилой площади 0.9, отсутствующая этажность — 1. Вместимость школ при отсутствии данных восстановлена по конфигурации BlocksNet. Spacematrix: 11 кластеров, random_state=42. Отсутствие объекта в OSM не означает его отсутствия в городе.</p><p>area_accessibility — среднее время до остальных кварталов с весами их площадей. Незастроенные кварталы могут не иметь определённых показателей плотности и морфотипов.</p><details><summary>Метаданные исследования</summary><pre style="white-space:pre-wrap">'+esc(JSON.stringify(D.meta,null,2))+'</pre></details>';
 filter();update();
+})().catch(error=>{
+ const message=document.createElement('div');message.className='notice';
+ message.textContent='Не удалось открыть данные отчёта. '+error.message;
+ document.querySelector('main').prepend(message);console.error(error);
+});
 </script></body></html>'''
 
 
