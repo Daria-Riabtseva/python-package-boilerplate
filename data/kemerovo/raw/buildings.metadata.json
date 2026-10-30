@@ -1,0 +1,9 @@
+{
+  "source": "https://www.osmlab.ru/regions/RU-KEM.pbf",
+  "tags": {
+    "building": true
+  },
+  "count": 38020,
+  "retrieved_utc": "2026-10-29T23:27:13.018848+00:00",
+  "note": "Regional PBF; exact city boundary intersection; libosmium area assembly"
+}

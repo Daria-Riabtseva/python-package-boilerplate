@@ -1,0 +1,37 @@
+{
+  "source": "https://www.osmlab.ru/regions/RU-KEM.pbf",
+  "tags": {
+    "highway": [
+      "construction",
+      "crossing",
+      "living_street",
+      "motorway",
+      "motorway_link",
+      "motorway_junction",
+      "pedestrian",
+      "primary",
+      "primary_link",
+      "raceway",
+      "residential",
+      "road",
+      "secondary",
+      "secondary_link",
+      "services",
+      "tertiary",
+      "tertiary_link",
+      "track",
+      "trunk",
+      "trunk_link",
+      "turning_circle",
+      "turning_loop",
+      "unclassified"
+    ],
+    "service": [
+      "living_street",
+      "emergency_access"
+    ]
+  },
+  "count": 5253,
+  "retrieved_utc": "2026-10-29T23:26:59.573173+00:00",
+  "note": "Regional PBF; exact city boundary intersection; libosmium area assembly"
+}

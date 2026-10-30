@@ -1,0 +1,19 @@
+{
+  "displayedDate": "Сохранено: 30.10.2026, 02:56:17 МСК",
+  "initial": {
+    "rows": 2230,
+    "metricOptions": 56,
+    "mapPaths": 2230,
+    "clusterRows": 11,
+    "manifestRows": 54
+  },
+  "populationTotal": 542928,
+  "categorical": "high-mid-rise high-density non-residential\nhigh-rise high-density residential\nhigh-rise low-density residential\nlow-rise low-density mixed-use\nlow-rise low-density non-residential\nlow-rise low-density residential\nmid-rise high-density non-residential\nmid-rise low-density non-residential\nmid-rise low-density residential",
+  "travel": {
+    "metric": "travel_time",
+    "rows": 2230
+  },
+  "demandLinkRows": 55,
+  "filteredRows": 1295,
+  "javascriptExceptions": []
+}

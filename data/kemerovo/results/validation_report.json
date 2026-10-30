@@ -1,0 +1,31 @@
+{
+  "checked_utc": "2026-10-30T08:42:48.306163+00:00",
+  "status": "passed",
+  "blocks": 2230,
+  "manifest_fields": 54,
+  "matrix_shape": [
+    2230,
+    2230
+  ],
+  "school_demand_links": 55,
+  "population_total": 542928,
+  "population_source": "Численность Кемерово, указанная пользователем 30.10.2026; год статистики не указан",
+  "uncalibrated_model_population": 158384.0,
+  "model_school_capacity": 28000.0,
+  "school_capacity_estimated_fraction": 1.0,
+  "model_school_demand": 65268,
+  "model_demand_left": 37268,
+  "far_snap_over_1000m": 26,
+  "checks": [
+    "unique IDs",
+    "all manifest fields",
+    "source/result equality",
+    "matrix shape and values",
+    "school supply/demand balance",
+    "provision ratios",
+    "links and local supply balance",
+    "object counts and excess objects",
+    "density domains",
+    "executed notebook without errors"
+  ]
+}

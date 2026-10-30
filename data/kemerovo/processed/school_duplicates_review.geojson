@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "school_duplicates_review",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "amenity": "school", "name": null, "osm_uid": "node/4154560089", "osm_id": "4154560089", "osm_type": "node", "addr:housenumber": "62Б", "addr:street": null, "building": null, "building:levels": null }, "geometry": { "type": "Point", "coordinates": [ 86.1037814, 55.346527299999984 ] } }
+]
+}

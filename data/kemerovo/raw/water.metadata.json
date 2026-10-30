@@ -1,0 +1,25 @@
+{
+  "source": "https://www.osmlab.ru/regions/RU-KEM.pbf",
+  "tags": {
+    "riverbank": true,
+    "reservoir": true,
+    "basin": true,
+    "dock": true,
+    "canal": true,
+    "pond": true,
+    "natural": [
+      "water",
+      "bay"
+    ],
+    "waterway": [
+      "river",
+      "canal",
+      "ditch"
+    ],
+    "landuse": "basin",
+    "water": "lake"
+  },
+  "count": 183,
+  "retrieved_utc": "2026-10-29T23:26:59.758239+00:00",
+  "note": "Regional PBF; exact city boundary intersection; libosmium area assembly"
+}

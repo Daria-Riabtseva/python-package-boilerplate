@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "buildings_outside_blocks",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "population": null, "footprint_area": 82.716099210542097, "number_of_floors": 1.0, "build_floor_area": 82.716099210542097, "is_living": false, "living_area": 0.0, "non_living_area": 82.716099210542097, "floors_estimated": 1, "population_estimated": 0, "area_estimated": 1, "count": 1 }, "geometry": { "type": "Point", "coordinates": [ 86.056570179575786, 55.307518997551931 ] } },
+{ "type": "Feature", "properties": { "population": null, "footprint_area": 363.014771445554, "number_of_floors": 1.0, "build_floor_area": 363.014771445554, "is_living": false, "living_area": 0.0, "non_living_area": 363.014771445554, "floors_estimated": 1, "population_estimated": 0, "area_estimated": 1, "count": 1 }, "geometry": { "type": "Point", "coordinates": [ 85.97206499005371, 55.322351050118051 ] } },
+{ "type": "Feature", "properties": { "population": null, "footprint_area": 263.69447610088235, "number_of_floors": 1.0, "build_floor_area": 263.69447610088235, "is_living": false, "living_area": 0.0, "non_living_area": 263.69447610088235, "floors_estimated": 1, "population_estimated": 0, "area_estimated": 1, "count": 1 }, "geometry": { "type": "Point", "coordinates": [ 85.972542700046873, 55.322447200109686 ] } },
+{ "type": "Feature", "properties": { "population": null, "footprint_area": 177.23746898382572, "number_of_floors": 1.0, "build_floor_area": 177.23746898382572, "is_living": false, "living_area": 0.0, "non_living_area": 177.23746898382572, "floors_estimated": 1, "population_estimated": 0, "area_estimated": 1, "count": 1 }, "geometry": { "type": "Point", "coordinates": [ 85.972893564008913, 55.322513000201859 ] } }
+]
+}

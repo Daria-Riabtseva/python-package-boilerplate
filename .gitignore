@@ -30,6 +30,10 @@ instance/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+data/**/osm_cache/
+data/**/overpass_cache/
+data/**/*.pbf
+data/**/*.part
 
 # Environments
 .env

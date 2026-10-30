@@ -1,0 +1,14 @@
+{
+  "signature": {
+    "blocks_hash": "4893a544632bdc4b8649eed0b690e50c90ad99b9a576047447cba7baedfdfda5",
+    "graph_hash": "19dbc524406017539415a8991b53b06d35f6f47d5114f28ef04542377c154552",
+    "weight": "travel_time",
+    "unit": "seconds",
+    "largest_scc": true,
+    "off_network_access": false
+  },
+  "source": "OpenStreetMap contributors / OSMLab RU-KEM.pbf; local OSM ways; OSMnx drive filter",
+  "snapshot_date": "Thu, 29 Oct 2026 09:21:28 GMT",
+  "mode": "drive",
+  "unit": "minutes"
+}

@@ -1,0 +1,8 @@
+{
+  "target_total": 542928,
+  "source": "Численность Кемерово, указанная пользователем 30.10.2026; год статистики не указан",
+  "uncalibrated_total": 158384.0,
+  "factor": 3.427922012324477,
+  "method": "Block-level proportional allocation with largest remainders; original OSM model weights",
+  "block_population_is_estimated": true
+}

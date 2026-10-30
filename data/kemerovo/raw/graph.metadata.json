@@ -1,0 +1,7 @@
+{
+  "source": "OpenStreetMap contributors / OSMLab RU-KEM.pbf; local OSM ways; OSMnx drive filter",
+  "created_utc": "2026-10-29T23:31:20.086118+00:00",
+  "mode": "drive",
+  "speeds": "OSM maxspeed / OSMnx imputation",
+  "deviation": "User approved building a drive graph instead of a prebuilt download on 2026-10-30"
+}
