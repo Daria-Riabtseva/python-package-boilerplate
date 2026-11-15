@@ -1,0 +1,4 @@
+blocksnet[ipynb,torch]==1.0.0a9
+pandas==2.2.3
+numpy==2.2.6
+pyarrow

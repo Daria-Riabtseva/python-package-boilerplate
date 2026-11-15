@@ -1,0 +1,10 @@
+{
+  "checked": 2230,
+  "total": 2230,
+  "last": {
+    "block_id": 2229,
+    "deficit_after": 36668,
+    "reduction": 600,
+    "status": "ok"
+  }
+}

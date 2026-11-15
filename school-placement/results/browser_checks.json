@@ -1,0 +1,17 @@
+{
+  "initial_rows": 2230,
+  "initial_map_and_table_all_blocks": true,
+  "leaflet_overlay_svg_has_correct_visible_dimensions": true,
+  "map_click_capacity_and_calculation": true,
+  "map_delta_matches_selected_card_and_table": true,
+  "invalid_capacities_rejected_in_ui": true,
+  "actual_scenario_csv_download_correct": true,
+  "reset_returns_baseline": true,
+  "manual_winner_recalculation_matches_automatic": true,
+  "automatic_button_cached_full_search_and_csv": true,
+  "filter_and_table_consistency": true,
+  "original_dashboard_available": true,
+  "mobile_no_horizontal_overflow": true,
+  "new_search_ui_displays_live_calculation_progress": true,
+  "javascript_exceptions": []
+}

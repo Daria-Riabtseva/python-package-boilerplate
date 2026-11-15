@@ -1,0 +1,7 @@
+{
+  "server_rejects_invalid_capacities": true,
+  "cross_origin_mutation_rejected": true,
+  "arbitrary_files_not_exposed": true,
+  "fresh_search_streams_real_per_candidate_progress": true,
+  "interrupted_search_releases_lock_and_does_not_cache_incomplete_results": true
+}

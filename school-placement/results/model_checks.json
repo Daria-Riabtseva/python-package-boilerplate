@@ -1,0 +1,14 @@
+{
+  "baseline_matches_practice_2": true,
+  "matrix_ids_match_all_2230_blocks": true,
+  "scenario_independence_and_reset": true,
+  "added_capacity_exact": true,
+  "multiple_schools_same_block_are_summed": true,
+  "invalid_capacities_and_unknown_block_rejected": true,
+  "new_school_serves_other_blocks_within_time_threshold": true,
+  "all_original_input_and_dashboard_files_unchanged": true,
+  "full_sequential_search_every_block_once": true,
+  "all_ties_reported": true,
+  "manual_recalculation_of_automatic_winner_identical": true,
+  "scenario_csv_totals_match_json": true
+}

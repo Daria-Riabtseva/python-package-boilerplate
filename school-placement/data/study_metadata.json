@@ -1,0 +1,50 @@
+{
+  "territory": "Кемерово, Кемеровская область — Кузбасс, Россия",
+  "created_utc": "2026-10-29T23:56:17.003166+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "numpy": "2.2.6",
+    "pandas": "2.2.3",
+    "geopandas": "1.1.4",
+    "shapely": "2.1.2",
+    "osmnx": "2.0.7",
+    "iduedu": "0.4.1"
+  },
+  "working_crs": "EPSG:32645",
+  "graph_source": "OpenStreetMap contributors / OSMLab RU-KEM.pbf; local OSM ways; OSMnx drive filter",
+  "graph_snapshot": "Thu, 29 Oct 2026 09:21:28 GMT",
+  "population_calibration": {
+    "target_total": 542928,
+    "source": "Численность Кемерово, указанная пользователем 30.10.2026; год статистики не указан",
+    "uncalibrated_total": 158384.0,
+    "factor": 3.427922012324477,
+    "method": "Block-level proportional allocation with largest remainders; original OSM model weights",
+    "block_population_is_estimated": true
+  },
+  "mode": "drive",
+  "off_network_access_time_included": false,
+  "far_snap_over_1000m_count": 26,
+  "maximum_snap_distance_m": 1976.33533146439,
+  "source_pbf": {
+    "source": "https://www.osmlab.ru/regions/RU-KEM.pbf",
+    "last_modified": "Thu, 29 Oct 2026 09:21:28 GMT",
+    "bytes": 88224078,
+    "sha256": "6320a3d2d30b2a2026912f1c5cc8e4f4bf908b7f7b30bdc494eb2617be55ae53"
+  },
+  "normative_school_demand_per_1000": 120,
+  "normative_school_accessibility_min": 15,
+  "assumptions": {
+    "default_floors": 1,
+    "living_area_coefficient": 0.9,
+    "living_area_per_person": 30,
+    "provision_max_depth": 1,
+    "spacematrix_n_clusters": 11
+  },
+  "limitations": [
+    "OSM incompleteness",
+    "modelled population",
+    "imputed school capacity",
+    "drive scenario is not pedestrian school accessibility",
+    "graph boundary coverage checked manually"
+  ]
+}
