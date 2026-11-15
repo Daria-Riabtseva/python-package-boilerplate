@@ -1,3 +1,3 @@
 # Preserve bytes used by calculation cache hashes and original-report checks.
-data/study_metadata.json -text
-reference/dashboard.html -text
+data/study_metadata.json binary
+reference/dashboard.html binary
